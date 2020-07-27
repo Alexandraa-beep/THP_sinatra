@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title> Le Show Gossip</title>
+  </head>
+  <body>
+    <h2>Voici le Gossip numéro <%= params['id'] %></h2>
+       <p> Son auteur : <%= gossips.author %></p>
+       <p> Le contenu du potin : <%= gossips.content %></p>
+      
+    <a href="/">Cliquez ici pour revenir à la page potins</a><br/>
+    <a href="/gossips/<%= params['id'] %>/edit/">Cliquez ici pour modifier le gossip</a>
+  </body>
+</html>
