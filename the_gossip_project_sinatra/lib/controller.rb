@@ -18,14 +18,14 @@ redirect '/' # redirect et qui dit à Sinatra "maintenant, redirige le user vers
 
 get '/gossips/:id/' do 
     
-    erb :show, locals: {gossips: Gossip.find(params["id"])}
+    erb :show, locals: {gossips: Gossip.find(params["gossip_author"])}
   end
 
   get '/gossips/:id/edit/' do 
     erb :edit
 end 
 
-  post '/gossips/edit/' do
+  post '/gossips/edit/:id' do
     Gossip.update(id,params["gossip_author"],params["gossip_content"])
     redirect '/'
   end
