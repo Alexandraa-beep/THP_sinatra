@@ -25,7 +25,7 @@ get '/gossips/:id/' do
     erb :edit
 end 
 
-  post '/gossips/edit/:id' do
+  post '/gossips/:id/edit/' do
     Gossip.update(id,params["gossip_author"],params["gossip_content"])
     redirect '/'
   end
