@@ -11,7 +11,7 @@ class Gossip
 
   def save
     CSV.open("./db/gossip.csv", "ab") do |csv|
-      csv << [@author , {@content}]
+      csv << [@author, @content]
     end
   end
 
@@ -36,7 +36,7 @@ class Gossip
     CSV.open("./db/gossip.csv", "w") do |csv|
       gossips.each_with_index do |x|
         if i == gossips.index(x)
-          csv << [author_update, content_update]
+          csv << [author, content]
         else
           csv << [x.author , x.content]
         end
